@@ -61,3 +61,5 @@ class Inventory {
     return productsSortedByDescendingPrice;
   }
 }
+
+module.exports = Inventory;
