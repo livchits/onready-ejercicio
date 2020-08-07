@@ -33,4 +33,22 @@ class Logger {
     }
     console.log(highestPriceProductsData);
   }
+
+  logProductsWithLowestPrice() {
+    let lowestPriceProductsData;
+    const productsWithLowestPrice = this.inventory.getProductsWithLowestPrice();
+    const quantityOfProductsWithLowestPrice = productsWithLowestPrice.length;
+
+    if (quantityOfProductsWithLowestPrice === 1) {
+      const [{ brand, model }] = productsWithLowestPrice;
+      lowestPriceProductsData = `Vehículo más barato: ${brand} ${model}`;
+    }
+    if (quantityOfProductsWithLowestPrice > 1) {
+      lowestPriceProductsData = productsWithLowestPrice.reduce(
+        reduceProductsDataForPrice,
+        'Los vehículos más baratos son:\n'
+      );
+    }
+    console.log(lowestPriceProductsData);
+  }
 }
