@@ -1,3 +1,5 @@
+const { reduceProductsDataForPrice } = require('./utils');
+
 class Logger {
   constructor(inventory) {
     this.inventory = inventory;
