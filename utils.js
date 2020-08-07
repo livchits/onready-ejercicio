@@ -22,8 +22,16 @@ function reduceProductsDataForPrice(productsData, { brand, model }) {
   return (productsData += `${brand} ${model} \n`);
 }
 
+function isNotALetter(text) {
+  const re = new RegExp('[a-zA-Z]');
+  return (
+    typeof text !== 'string' || text.length !== 1 || text.match(re) === null
+  );
+}
+
 module.exports = {
   formatDisplacement,
   formatPrice,
   reduceProductsDataForPrice,
+  isNotALetter,
 };
