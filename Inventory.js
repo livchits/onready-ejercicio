@@ -51,4 +51,13 @@ class Inventory {
     );
     return productsWithLetterInModel;
   }
+
+  sortProductsByDescendingPrice() {
+    const productsSortedByDescendingPrice = [
+      ...this._products.sort(
+        (product, nextProduct) => nextProduct.price - product.price
+      ),
+    ];
+    return productsSortedByDescendingPrice;
+  }
 }
