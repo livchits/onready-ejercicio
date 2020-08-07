@@ -53,6 +53,14 @@ class Logger {
   }
 
   logProductsWithLetterInModel(letter) {
+    if (isNotALetter(letter)) {
+      const error = new Error(
+        `El argumento debe ser una letra, pero se ingresó '${letter}'`
+      );
+      console.log(error.message);
+      throw error;
+    }
+
     let productsWithLetterInModelData;
     const productsWithLetterInModel = this.inventory.findProductsWithLetterInModel(
       letter
