@@ -51,4 +51,30 @@ class Logger {
     }
     console.log(lowestPriceProductsData);
   }
+
+  logProductsWithLetterInModel(letter) {
+    let productsWithLetterInModelData;
+    const productsWithLetterInModel = this.inventory.findProductsWithLetterInModel(
+      letter
+    );
+    const quantityOfProductsWithLetterInModel =
+      productsWithLetterInModel.length;
+
+    if (quantityOfProductsWithLetterInModel === 1) {
+      const [{ brand, model, price }] = productsWithLetterInModel;
+      productsWithLetterInModelData = `Vehículo que contiene en el modelo la letra '${letter}': ${brand} ${model} ${formatPrice(
+        price
+      )}`;
+    }
+    if (quantityOfProductsWithLetterInModel > 1) {
+      productsWithLetterInModelData = productsWithLetterInModel.reduce(
+        (dataToPrint, { brand, model, price }) => {
+          dataToPrint += `${brand} ${model} ${formatPrice(price)}\n`;
+          return dataToPrint;
+        },
+        `Vehículos que contienen en el modelo la letra '${letter}:'\n`
+      );
+    }
+    console.log(productsWithLetterInModelData);
+  }
 }
