@@ -1,4 +1,5 @@
 const { reduceProductsDataForPrice, formatPrice } = require('./utils');
+const Inventory = require('./Inventory');
 
 class Logger {
   constructor(inventory) {
@@ -86,3 +87,5 @@ class Logger {
     console.log(productsWithLetterInModelData);
   }
 }
+
+module.exports = Inventory;
