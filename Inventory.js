@@ -36,4 +36,12 @@ class Inventory {
     );
     return productsWithHighestPrice;
   }
+
+  getProductsWithLowestPrice() {
+    const lowestPrice = Math.min(...this.prices);
+    const productsWithLowestPrice = this._products.filter(
+      (product) => product.price === lowestPrice
+    );
+    return productsWithLowestPrice;
+  }
 }
