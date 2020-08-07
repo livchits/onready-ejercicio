@@ -30,6 +30,7 @@ class Inventory {
     return productData;
   }
 
+  //El método devuelve los productos más caros y no solo el más caro previendo la posibilidad de que varios productos tengan el precio más alto. Lo mismo sucede con los métodos que devuelven e imprimen los productos más baratos y los productos que contienen una determinada letra en el modelo.
   getProductsWithHighestPrice() {
     const highestPrice = Math.max(...this.prices);
     const productsWithHighestPrice = this._products.filter(
