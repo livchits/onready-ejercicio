@@ -44,4 +44,11 @@ class Inventory {
     );
     return productsWithLowestPrice;
   }
+
+  findProductsWithLetterInModel(letter) {
+    const productsWithLetterInModel = this._products.filter(({ model }) =>
+      model.includes(letter)
+    );
+    return productsWithLetterInModel;
+  }
 }
