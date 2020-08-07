@@ -90,6 +90,18 @@ class Logger {
     }
     console.log(productsWithLetterInModelData);
   }
+
+  logProductsSortedByDescendingPrice() {
+    const productsSortedByDescendingPrice = this.inventory.sortProductsByDescendingPrice();
+    const productsSortedData = productsSortedByDescendingPrice.reduce(
+      (dataToPrint, { brand, model }) => {
+        dataToPrint += `${brand} ${model}\n`;
+        return dataToPrint;
+      },
+      `=============================\nVehículos ordenados por precio de mayor a menor:\n`
+    );
+    console.log(productsSortedData);
+  }
 }
 
 module.exports = Logger;
