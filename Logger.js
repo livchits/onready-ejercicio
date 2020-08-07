@@ -13,4 +13,22 @@ class Logger {
     );
     console.log(`${allProductsData}=============================`);
   }
+
+  logProductsWithHighestPrice() {
+    let highestPriceProductsData;
+    const productsWithHighestPrice = this.inventory.getProductsWithHighestPrice();
+    const quantityOfProductsWithHighestPrice = productsWithHighestPrice.length;
+
+    if (quantityOfProductsWithHighestPrice === 1) {
+      const [{ brand, model }] = productsWithHighestPrice;
+      highestPriceProductsData = `Vehículo más caro: ${brand} ${model}`;
+    }
+    if (quantityOfProductsWithHighestPrice > 1) {
+      highestPriceProductsData = productsWithHighestPrice.reduce(
+        reduceProductsDataForPrice,
+        'Los vehículos más caros son:\n'
+      );
+    }
+    console.log(highestPriceProductsData);
+  }
 }
