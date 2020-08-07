@@ -1,4 +1,4 @@
-const { reduceProductsDataForPrice } = require('./utils');
+const { reduceProductsDataForPrice, formatPrice } = require('./utils');
 
 class Logger {
   constructor(inventory) {
