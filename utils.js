@@ -18,4 +18,12 @@ function formatPrice(price) {
   return priceFromated;
 }
 
-module.exports = { formatDisplacement, formatPrice };
+function reduceProductsDataForPrice(productsData, { brand, model }) {
+  return (productsData += `${brand} ${model} \n`);
+}
+
+module.exports = {
+  formatDisplacement,
+  formatPrice,
+  reduceProductsDataForPrice,
+};
