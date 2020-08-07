@@ -28,4 +28,12 @@ class Inventory {
 
     return productData;
   }
+
+  getProductsWithHighestPrice() {
+    const highestPrice = Math.max(...this.prices);
+    const productsWithHighestPrice = this._products.filter(
+      (product) => product.price === highestPrice
+    );
+    return productsWithHighestPrice;
+  }
 }
