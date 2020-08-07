@@ -88,4 +88,4 @@ class Logger {
   }
 }
 
-module.exports = Inventory;
+module.exports = Logger;
