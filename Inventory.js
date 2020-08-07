@@ -1,5 +1,6 @@
 const Car = require('./Car');
 const Motorcycle = require('./Motorcycle');
+const { formatDisplacement, formatPrice } = require('./utils');
 
 class Inventory {
   constructor(productsList) {
