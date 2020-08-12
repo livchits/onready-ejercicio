@@ -1,7 +1,3 @@
-const Car = require('./Car');
-const Motorcycle = require('./Motorcycle');
-const { formatDisplacement, formatPrice } = require('./utils');
-
 class Inventory {
   constructor(productsList) {
     this._products = productsList;
@@ -13,21 +9,7 @@ class Inventory {
   }
 
   getProductData(product) {
-    const { brand, model, doors, displacement, price } = product;
-    let productData;
-
-    if (product instanceof Car) {
-      productData = `Marca: ${brand} // Modelo: ${model} // Puertas: ${doors} // Precio: ${formatPrice(
-        price
-      )}`;
-    }
-    if (product instanceof Motorcycle) {
-      productData = `Marca: ${brand} // Modelo: ${model} // Cilindrada: ${formatDisplacement(
-        displacement
-      )} // Precio: ${formatPrice(price)}`;
-    }
-
-    return productData;
+    return product.data;
   }
 
   //El método devuelve los productos más caros y no solo el más caro previendo la posibilidad de que varios productos tengan el precio más alto. Lo mismo sucede con los métodos que devuelven e imprimen los productos más baratos y los productos que contienen una determinada letra en el modelo.
